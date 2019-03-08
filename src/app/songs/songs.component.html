@@ -1,6 +1,8 @@
 <div>
   <h2>My songs list</h2>
-  <ul>
+  <input type="text" name="song" [(ngModel)]="song">
+  <button (click)="getSongs()">Add a new song</button>
+  <ul class="songs">
       <li *ngFor="let song of songs">
         <a href="{{song.url}}" target="_blank">{{song.name}}</a>
         <span>{{song.artist}}</span>
