@@ -1,0 +1,9 @@
+<div>
+  <h2>My songs list</h2>
+  <ul>
+      <li *ngFor="let song of songs">
+        <a href="{{song.url}}" target="_blank">{{song.name}}</a>
+        <span>{{song.artist}}</span>
+      </li>
+  </ul>
+</div>
