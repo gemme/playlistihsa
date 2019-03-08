@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SongService } from './song.service';
 
 @Component({
   selector: 'app-songs',
@@ -9,20 +10,10 @@ export class SongsComponent implements OnInit {
 
   public songs: Array<object> = null;
 
-  constructor() { }
+  constructor(private songService: SongService) { }
 
   ngOnInit() {
-
-    this.songs = [{
-      artist: 'Nirvana',
-      name: 'Teens like spirit',
-      url: 'www.google.com'
-    },{
-      artist: 'Metallica',
-      name: 'Nothing else matters',
-      url: 'www.google.com'
-    }]
-
+    this.songs = this.songService.getSongs();
   }
 
 }
