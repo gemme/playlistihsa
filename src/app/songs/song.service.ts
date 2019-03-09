@@ -21,7 +21,7 @@ export class SongService {
     .pipe(
       map(response => {
         console.log('response', response);
-        return response.results.trackmatches.track
+        return response['results'].trackmatches.track
       })
     ).toPromise();
   }
